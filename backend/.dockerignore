@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual env
+venv/
+.env
+.env.*
+db.sqlite3
+*.log
+
+# Cache
+*.db
+*.sqlite3
+*.pot
+*.pyc
+*.log
+*.coverage
+.pytest_cache/
+
+# Git
+.git/
+.gitignore
+
+# Media/static files
+media/
+staticfiles/
+
+# Django stuff
+*.mo
+*.pot
+
+# backend/.dockerignore
+db.sqlite3

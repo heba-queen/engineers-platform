@@ -1,0 +1,22 @@
+# Python
+*.pyc
+__pycache__/
+*.sqlite3
+*.log
+venv/
+.env*
+db.sqlite3
+
+# Node
+node_modules/
+dist/
+build/
+
+# IDE
+.vscode/
+*.swp
+
+# Docker
+*.pid
+*.sock
+docker-compose.override.yml
