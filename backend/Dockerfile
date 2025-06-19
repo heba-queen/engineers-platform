@@ -11,4 +11,5 @@ RUN pip install --upgrade pip && pip install -r requirements.txt
 
 COPY . /app/
 
-CMD gunicorn engineering.wsgi:application --bind 0.0.0.0:$PORT
+EXPOSE 8080
+CMD gunicorn engineering.wsgi:application --bind 0.0.0.0:8080
