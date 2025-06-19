@@ -101,6 +101,8 @@ else:
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+DATABASE_URL = os.getenv("DATABASE_URL")
+
 DATABASES = {
      "default": dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
 }
@@ -165,7 +167,6 @@ EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 
 LOG_LEVEL = os.getenv("DJANGO_LOG_LEVEL", "INFO")
 
-DATABASE_URL = os.getenv("DATABASE_URL")
 
 LOGGING = {
     'version': 1,
