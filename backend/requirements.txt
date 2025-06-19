@@ -6,3 +6,4 @@ python-decouple
 django-cors-headers
 Pillow
 whitenoise
+dj_database_url
