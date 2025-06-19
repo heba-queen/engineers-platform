@@ -5,3 +5,4 @@ django-redis
 python-decouple
 django-cors-headers
 Pillow
+whitenoise
