@@ -94,9 +94,9 @@ TEMPLATES = [
 WSGI_APPLICATION = 'engineering.wsgi.application'
 
 if os.getenv("RAILWAY_STATIC_URL"):  # Railway-specific env var
-    DB_PATH = "/app/db.sqlite3"
+    DB_PATH = "/app"
 else:
-    DB_PATH = BASE_DIR / "db.sqlite3"
+    DB_PATH = str(BASE_DIR)
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
@@ -104,7 +104,7 @@ else:
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': DB_PATH / 'db.sqlite3',
+        'NAME': os.path.join(DB_PATH , 'db.sqlite3'),
     }
 }
 
