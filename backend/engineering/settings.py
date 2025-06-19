@@ -15,7 +15,7 @@ import os
 from decouple import config
 import sys
 import logging.config
-
+import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -102,10 +102,7 @@ else:
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(DB_PATH , 'db.sqlite3'),
-    }
+     "default": dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
 }
 
 
@@ -167,6 +164,8 @@ EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 
 
 LOG_LEVEL = os.getenv("DJANGO_LOG_LEVEL", "INFO")
+
+DATABASE_URL = os.getenv("DATABASE_URL")
 
 LOGGING = {
     'version': 1,
