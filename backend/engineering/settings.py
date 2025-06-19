@@ -30,7 +30,7 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = ['*']
-CSRF_TRUSTED_ORIGINS = ['https://engineers-platform-production.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://*.railway.app']
 
 AUTH_USER_MODEL = 'engineeringapi.CustomUser'
 
