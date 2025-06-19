@@ -11,7 +11,5 @@ RUN pip install --upgrade pip && pip install -r requirements.txt
 
 COPY . /app/
 
-RUN python manage.py collectsatic --noinput
-
 EXPOSE 8080
-CMD python manage.py migrate && gunicorn engineering.wsgi:application --bind 0.0.0.0:8080
+CMD python manage.py collectsatic --noinput && python manage.py migrate && gunicorn engineering.wsgi:application --bind 0.0.0.0:8080
