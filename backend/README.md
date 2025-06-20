@@ -1,4 +1,4 @@
-## 🚀 Caching Strategy
+## Caching Strategy
 
 - **Backend Cache Engine**: Redis using `django-redis`
 - **Cached Views**:

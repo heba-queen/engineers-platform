@@ -12,6 +12,7 @@ import { serverUrl } from "../static/urls";
 const SignUp = () => {
   const navigateTo = useNavigate();
   const { login } = useAuth();
+   const [errormessage, seterrormessage] = useState('');
   const [userData, setUserData] = useState({
     name: "",
     age: 0,
@@ -113,12 +114,16 @@ const SignUp = () => {
           });
           setErrors({});
           setUserData({});
+          seterrormessage('')
           console.log("User Created");
 
           navigateTo("/");
         }
       })
-      .catch((error) => console.log(error));
+      .catch((error) => { console.log(error)
+        setErrors({});
+        seterrormessage('User already exist !')
+      });
   };
 
   return (
@@ -295,6 +300,9 @@ const SignUp = () => {
                     />
                   </div>
                 </div>
+              </div>
+              <div className="d-flex align-items-center justify-content-center m-3">
+              <span className="text-danger">{errormessage}</span>
               </div>
               <button
                 type="submit"

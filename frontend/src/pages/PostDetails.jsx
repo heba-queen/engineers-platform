@@ -4,6 +4,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import AddBotton from "../assets/img/material-symbols_add-circle-outline.png";
 import { useAuth } from "../context/UserProvider";
+import profile from "../assets/img/user_img/1677328833.png";
 
 const PostDetails = () => {
   const { id } = useParams();
@@ -165,7 +166,7 @@ const PostDetails = () => {
                     <div className="topsection">
                       <div className="imgContPost">
                         <img
-                          src={imageUrl + ((userInfo.image.slice(0,6) == "/media") ? userInfo.image : ('media/' + userInfo.image))}
+                        src={ (userInfo.image != '' && userInfo.image != null) ? imageUrl + (  (userInfo.image.slice(0,6) == "/media") ? userInfo.image : ('media/' + userInfo.image)  ) : profile}
                           alt=""
                         />
                       </div>

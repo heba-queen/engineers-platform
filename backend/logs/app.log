@@ -7440,3 +7440,67 @@ django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLR
 [2025-06-15 23:13:39,440] INFO django.server.log_message:213 - "POST /api/profile HTTP/1.1" 200 492
 [2025-06-15 23:13:39,492] INFO django.server.log_message:213 - "POST /api/posts HTTP/1.1" 200 1407
 [2025-06-15 23:13:39,493] INFO django.server.log_message:213 - "POST /api/posts HTTP/1.1" 200 1407
+[2025-06-20 15:38:33,390] INFO django.utils.autoreload.run_with_reloader:667 - Watching for file changes with StatReloader
+[2025-06-20 15:39:23,439] INFO django.utils.autoreload.run_with_reloader:667 - Watching for file changes with StatReloader
+[2025-06-20 15:39:28,658] ERROR django.request.log_response:248 - Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\Heba\AppData\Local\pypoetry\Cache\virtualenvs\djangofirstapp-lplOrIUi-py3.13\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Heba\AppData\Local\pypoetry\Cache\virtualenvs\djangofirstapp-lplOrIUi-py3.13\Lib\site-packages\django\utils\deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "C:\Users\Heba\AppData\Local\pypoetry\Cache\virtualenvs\djangofirstapp-lplOrIUi-py3.13\Lib\site-packages\django\contrib\messages\middleware.py", line 12, in process_request
+    request._messages = default_storage(request)
+                        ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Heba\AppData\Local\pypoetry\Cache\virtualenvs\djangofirstapp-lplOrIUi-py3.13\Lib\site-packages\django\contrib\messages\storage\__init__.py", line 12, in default_storage
+    return import_string(settings.MESSAGE_STORAGE)(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Heba\AppData\Local\pypoetry\Cache\virtualenvs\djangofirstapp-lplOrIUi-py3.13\Lib\site-packages\django\contrib\messages\storage\fallback.py", line 17, in __init__
+    storage_class(*args, **kwargs) for storage_class in self.storage_classes
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Heba\AppData\Local\pypoetry\Cache\virtualenvs\djangofirstapp-lplOrIUi-py3.13\Lib\site-packages\django\contrib\messages\storage\cookie.py", line 92, in __init__
+    self.signer = signing.get_cookie_signer(salt=self.key_salt)
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Heba\AppData\Local\pypoetry\Cache\virtualenvs\djangofirstapp-lplOrIUi-py3.13\Lib\site-packages\django\core\signing.py", line 112, in get_cookie_signer
+    key=_cookie_signer_key(settings.SECRET_KEY),
+                           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Heba\AppData\Local\pypoetry\Cache\virtualenvs\djangofirstapp-lplOrIUi-py3.13\Lib\site-packages\django\conf\__init__.py", line 90, in __getattr__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+[2025-06-20 15:39:28,881] ERROR django.server.log_message:213 - "GET / HTTP/1.1" 500 145
+[2025-06-20 15:39:29,741] ERROR django.request.log_response:248 - Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "C:\Users\Heba\AppData\Local\pypoetry\Cache\virtualenvs\djangofirstapp-lplOrIUi-py3.13\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Heba\AppData\Local\pypoetry\Cache\virtualenvs\djangofirstapp-lplOrIUi-py3.13\Lib\site-packages\django\utils\deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "C:\Users\Heba\AppData\Local\pypoetry\Cache\virtualenvs\djangofirstapp-lplOrIUi-py3.13\Lib\site-packages\django\contrib\messages\middleware.py", line 12, in process_request
+    request._messages = default_storage(request)
+                        ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Heba\AppData\Local\pypoetry\Cache\virtualenvs\djangofirstapp-lplOrIUi-py3.13\Lib\site-packages\django\contrib\messages\storage\__init__.py", line 12, in default_storage
+    return import_string(settings.MESSAGE_STORAGE)(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Heba\AppData\Local\pypoetry\Cache\virtualenvs\djangofirstapp-lplOrIUi-py3.13\Lib\site-packages\django\contrib\messages\storage\fallback.py", line 17, in __init__
+    storage_class(*args, **kwargs) for storage_class in self.storage_classes
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Heba\AppData\Local\pypoetry\Cache\virtualenvs\djangofirstapp-lplOrIUi-py3.13\Lib\site-packages\django\contrib\messages\storage\cookie.py", line 92, in __init__
+    self.signer = signing.get_cookie_signer(salt=self.key_salt)
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Heba\AppData\Local\pypoetry\Cache\virtualenvs\djangofirstapp-lplOrIUi-py3.13\Lib\site-packages\django\core\signing.py", line 112, in get_cookie_signer
+    key=_cookie_signer_key(settings.SECRET_KEY),
+                           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Heba\AppData\Local\pypoetry\Cache\virtualenvs\djangofirstapp-lplOrIUi-py3.13\Lib\site-packages\django\conf\__init__.py", line 90, in __getattr__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+[2025-06-20 15:39:29,780] ERROR django.server.log_message:213 - "GET /favicon.ico HTTP/1.1" 500 145
+[2025-06-20 18:54:19,771] INFO django.utils.autoreload.trigger_reload:265 - G:\full project\full project\backend\engineeringapi\views.py changed, reloading.
+[2025-06-20 18:54:22,191] INFO django.utils.autoreload.run_with_reloader:667 - Watching for file changes with StatReloader
+[2025-06-20 19:13:20,895] INFO django.utils.autoreload.trigger_reload:265 - G:\full project\full project\backend\engineeringapi\views.py changed, reloading.
+[2025-06-20 19:13:22,310] INFO django.utils.autoreload.run_with_reloader:667 - Watching for file changes with StatReloader
+[2025-06-20 19:17:15,530] INFO django.utils.autoreload.trigger_reload:265 - G:\full project\full project\backend\engineeringapi\admin.py changed, reloading.
+[2025-06-20 19:17:17,019] INFO django.utils.autoreload.run_with_reloader:667 - Watching for file changes with StatReloader
+[2025-06-20 19:19:44,672] INFO django.utils.autoreload.trigger_reload:265 - G:\full project\full project\backend\engineeringapi\admin.py changed, reloading.
+[2025-06-20 19:19:45,857] INFO django.utils.autoreload.run_with_reloader:667 - Watching for file changes with StatReloader
+[2025-06-20 19:20:19,042] INFO django.utils.autoreload.trigger_reload:265 - G:\full project\full project\backend\engineeringapi\admin.py changed, reloading.
+[2025-06-20 19:20:20,382] INFO django.utils.autoreload.run_with_reloader:667 - Watching for file changes with StatReloader
+[2025-06-20 19:21:57,290] INFO django.utils.autoreload.trigger_reload:265 - G:\full project\full project\backend\engineeringapi\admin.py changed, reloading.
+[2025-06-20 19:21:58,460] INFO django.utils.autoreload.run_with_reloader:667 - Watching for file changes with StatReloader

@@ -93,7 +93,7 @@ const Navbar = () => {
           {userInfo != null && (
             <div className="profile_nav_img_con"> 
               <Link to={`/profile/invitations/${userInfo.id}`}>
-                <img src={userInfo.image != '' ? imageUrl + ((userInfo.image.slice(0,6) == "/media") ? userInfo.image.slice(1,userInfo.image.length) : ('media/' + userInfo.image)) : profile} />
+                <img src={(userInfo.image != '' && userInfo.image != null) ? imageUrl + ((userInfo.image.slice(0,6) == "/media") ? userInfo.image.slice(1,userInfo.image.length) : ('media/' + userInfo.image)) : profile} />
               </Link>
             </div>
           )}

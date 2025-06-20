@@ -71,7 +71,7 @@ const AddPost = () => {
   const submitData = () => {
       axios
         .post(
-          serverUrl + "/addPost",
+          serverUrl + "addPost",
           {
             category: post.category,
             description: post.desc,

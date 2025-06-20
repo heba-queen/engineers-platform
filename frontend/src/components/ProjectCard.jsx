@@ -20,7 +20,7 @@ const ProjectCard = ({ project }) => {
             <div className="imgContPost">
               <img src={ (project.author.image == '') ? profile : authorImage } alt="User" />
             </div>
-            <span className="name">{`${project.author.username}`}</span>
+            <span className="name">{`${project.author.first_name}`}</span>
           </div>
           </Link>
           <span className="proName">{project.name}</span>

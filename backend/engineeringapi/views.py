@@ -477,7 +477,7 @@ def deleteProject(request):
         id = request.data.get("id")
         if not id:
             return Response(
-                {"error": "Post ID is required"}, status=status.HTTP_400_BAD_REQUEST
+                {"error": "Project ID is required"}, status=status.HTTP_400_BAD_REQUEST
             )
 
         project = Project.objects.get(id=id)
@@ -496,7 +496,7 @@ def deleteProject(request):
             {"message": "Project deleted successfully"}, status=status.HTTP_200_OK
         )
 
-    except Post.DoesNotExist:
+    except Project.DoesNotExist:
         return Response(
             {"error": "Project not found"}, status=status.HTTP_404_NOT_FOUND
         )
@@ -606,42 +606,3 @@ def change_password(request):
         return Response({"error": "User not found"}, status=404)
     
     
-    
-@api_view(["GET"])
-def cached_projects(request):
-    cached_data = cache.get("all_projects")
-    if cached_data:
-        return Response(cached_data)
-
-    projects = Project.objects.all()
-    serializer = ProjectSerializer(projects, many=True)
-    for project in serializer.data:
-
-        author = (
-            CustomUser.objects.filter(id=project["author"]).values().first()
-        )
-        logger.debug(author)
-        project["author"] = author
-    cache.set("all_projects", serializer.data, timeout=300)
-    return Response(serializer.data)
-
-
-@api_view(["GET"])
-def cached_posts(request):
-    cached_data = cache.get("all_posts")
-    if cached_data:
-        return Response(cached_data)
-
-    posts = Post.objects.all()
-    serializer = PostSerializer(posts, many=True)
-    for post in serializer.data:
-
-        author = CustomUser.objects.filter(id=post["author"]).values().first()
-        post["author"] = author
-
-        comments = Comment.objects.filter(post=post["id"]).all()
-
-        serializerComment = CommentSerializer(comments, many=True)
-        post["comments"] = len(serializerComment.data)
-    cache.set("all_posts", serializer.data, timeout=300)
-    return Response(serializer.data)

@@ -26,8 +26,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config('SECRET_KEY')
 
+
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', default=False, cast=bool)
+DEBUG = config('DEBUG')
 
 ALLOWED_HOSTS = ['*']
 CSRF_TRUSTED_ORIGINS = ['https://*.railway.app']
@@ -93,7 +94,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'engineering.wsgi.application'
 
-if os.getenv("RAILWAY_STATIC_URL"):  # Railway-specific env var
+if config("RAILWAY_STATIC_URL"):  # Railway-specific env var
     DB_PATH = "/app"
 else:
     DB_PATH = str(BASE_DIR)
@@ -101,7 +102,7 @@ else:
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASE_URL = os.getenv("DATABASE_URL_POSTGRE")
+DATABASE_URL = config("DATABASE_URL_POSTGRE")
 
 DATABASES = {
      "default": dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
@@ -165,7 +166,7 @@ EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 
 
-LOG_LEVEL = os.getenv("DJANGO_LOG_LEVEL", "INFO")
+LOG_LEVEL = config("DJANGO_LOG_LEVEL", "INFO")
 
 
 LOGGING = {

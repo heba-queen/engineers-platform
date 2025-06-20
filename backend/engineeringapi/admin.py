@@ -7,25 +7,9 @@ from django.contrib.auth.admin import UserAdmin
 
 @admin.register(CustomUser)
 class CustomUserAdmin(UserAdmin):
-    model = CustomUser
     list_display = ('id', 'username', 'email', 'status', 'age', 'country', 'number', 'speciality')
     list_filter = ('status', 'country')
-    fieldsets = UserAdmin.fieldsets + (
-        (None, {
-            'fields': (
-                'age', 'country', 'number', 'status',
-                'speciality', 'image', 'reset_token'
-            )
-        }),
-    )
-    add_fieldsets = UserAdmin.add_fieldsets + (
-        (None, {
-            'fields': (
-                'age', 'country', 'number', 'status',
-                'speciality', 'image', 'reset_token'
-            )
-        }),
-    )
+    search_fields = ('username', 'email')
 
 
 @admin.register(Project)
