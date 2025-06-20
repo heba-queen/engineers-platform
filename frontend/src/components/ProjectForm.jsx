@@ -106,7 +106,7 @@ const ProjectForm = ({ id }) => {
     
     axios
       .post(
-        "http://127.0.0.1:8000/api/addProject",
+        serverUrl + "addProject",
         {
           name: project.projectName,
           category: project.category,
@@ -141,7 +141,7 @@ const ProjectForm = ({ id }) => {
       
     axios
       .post(
-        "http://127.0.0.1:8000/api/editProject",
+        serverUrl + "editProject",
         {
           id : id,
           name: project.projectName,

@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import axios from 'axios';
+import { serverUrl } from '../static/urls';
 
 export default function ForgotPassword() {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
   const sendEmail = () => {
-    axios.post('http://127.0.0.1:8000/api/send-reset-email/', { email })
+    axios.post(serverUrl + 'send-reset-email/', { email })
       .then(res => setMessage(res.data.message))
       .catch(err => setMessage(err.response?.data?.error || 'Error'));
   };

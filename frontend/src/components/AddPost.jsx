@@ -5,6 +5,7 @@ import addImgIcon from '../assets/img/flat-color-icons_add-image.png'
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 import { useAuth } from "../context/UserProvider";
+import { serverUrl } from "../static/urls";
 const AddPost = () => {
 
   const navigateTo  = useNavigate();
@@ -70,7 +71,7 @@ const AddPost = () => {
   const submitData = () => {
       axios
         .post(
-          "http://127.0.0.1:8000/api/addPost",
+          serverUrl + "/addPost",
           {
             category: post.category,
             description: post.desc,

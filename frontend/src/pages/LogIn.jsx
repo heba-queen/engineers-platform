@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useAuth } from "../context/UserProvider";
+import { serverUrl } from "../static/urls";
 
 const LogIn = () => {
   const { login } = useAuth();
@@ -45,7 +46,7 @@ const LogIn = () => {
 
   const submitData = () => {
     axios
-      .post("http://127.0.0.1:8000/api/login", {
+      .post(serverUrl +  "login", {
         email: userData.email,
         password: userData.password,
       })

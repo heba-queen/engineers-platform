@@ -7,6 +7,7 @@ import add_img from "../assets/img/flat-color-icons_add-image.png";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useAuth } from "../context/UserProvider";
+import { serverUrl } from "../static/urls";
 
 const SignUp = () => {
   const navigateTo = useNavigate();
@@ -81,7 +82,7 @@ const SignUp = () => {
 
     axios
       .post(
-        "http://127.0.0.1:8000/api/signup",
+        serverUrl + "signup",
         {
           username: userData.name,
           password: userData.password,

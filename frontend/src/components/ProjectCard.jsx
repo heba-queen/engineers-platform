@@ -11,7 +11,7 @@ const ProjectCard = ({ project }) => {
       <Link to={`/project/${project.id}`}>
         <div className="projectCon">
           <img
-            src={`http://127.0.0.1:8000${project.image1}`}
+            src={`${imageUrl}${project.image1}`}
             alt="Project"
             style={{ width: '100%', height: '250px' }}
           />

@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import axios from 'axios';
+import { serverUrl } from '../static/urls';
 
 export default function ResetPassword() {
   const { token } = useParams();
@@ -9,7 +10,7 @@ export default function ResetPassword() {
   const navigate = useNavigate();
 
   const resetPassword = () => {
-    axios.post('http://127.0.0.1:8000/api/reset-password/', { token, new_password: password })
+    axios.post(serverUrl + 'reset-password/', { token, new_password: password })
       .then(res => {
         setMessage('Password reset successful!');
         setTimeout(() => navigate('/login'), 2000); // redirect after 2s

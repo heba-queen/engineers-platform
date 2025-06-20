@@ -5,6 +5,7 @@ import AddPost from "../components/AddPost";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
 import { useAuth } from "../context/UserProvider";
+import { serverUrl } from "../static/urls";
 
 const Posts = ({ search, id }) => {
   const { userInfo } = useAuth();
@@ -14,7 +15,7 @@ const Posts = ({ search, id }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.post("http://127.0.0.1:8000/api/posts" , {
+    axios.post( serverUrl+"posts" , {
       userId : (id != null) ? id : 0,
     }).then((response) => {
       console.log(response.data);
