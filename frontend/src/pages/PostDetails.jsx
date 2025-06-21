@@ -166,7 +166,7 @@ const PostDetails = () => {
                     <div className="topsection">
                       <div className="imgContPost">
                         <img
-                        src={ (userInfo.image != '' && userInfo.image != null) ? imageUrl + (  (userInfo.image.slice(0,6) == "/media") ? userInfo.image : ('media/' + userInfo.image)  ) : profile}
+                        src={ (userInfo.image != '' && userInfo.image != null) ? imageUrl + (  (userInfo.image.slice(0,6) == "/media") ? userInfo.image.slice(1,userInfo.image.length) : ('media/' + userInfo.image)  ) : profile}
                           alt=""
                         />
                       </div>

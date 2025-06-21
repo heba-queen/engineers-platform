@@ -11,7 +11,7 @@ const ProjectCard = ({ project }) => {
       <Link to={`/project/${project.id}`}>
         <div className="projectCon">
           <img
-            src={`${imageUrl}${project.image1}`}
+            src={`${imageUrl}${project.image1.slice(1,project.image1.length)}`}
             alt="Project"
             style={{ width: '100%', height: '250px' }}
           />

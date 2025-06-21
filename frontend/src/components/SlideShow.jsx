@@ -17,7 +17,7 @@ const SlideShow = ({ images }) => {
           style={{ display: index === currentSlide ? 'block' : 'none' }}
         >
           <div className="numbertext">{`${index + 1} / ${images.length}`}</div>
-          <img className="img" src={`${imageUrl}/media/${image}`} alt={`Slide ${index + 1}`} style={{ width: '100%', height: '70vh' }} />
+          <img className="img" src={`${imageUrl}media/${image}`} alt={`Slide ${index + 1}`} style={{ width: '100%', height: '70vh' }} />
           
         </div>
       ))}

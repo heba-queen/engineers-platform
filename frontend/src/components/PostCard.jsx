@@ -119,7 +119,7 @@ const PostCard = ({ post }) => {
           </div>
           {post.image && (
             <div className="post_img_container">
-              <img src={imageUrl + post.image} alt="Post" />
+              <img src={imageUrl + post.image.slice(1,post.image.length) } alt="Post" />
             </div>
           )}
         </Link>
