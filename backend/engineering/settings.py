@@ -94,10 +94,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'engineering.wsgi.application'
 
-if config("RAILWAY_STATIC_URL"):  # Railway-specific env var
-    DB_PATH = "/app"
-else:
-    DB_PATH = str(BASE_DIR)
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
